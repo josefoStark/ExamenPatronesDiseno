@@ -1,4 +1,5 @@
 ﻿using System;
+using CommunicationService;
 
 namespace ExamenPatronesDiseno
 {
@@ -6,6 +7,8 @@ namespace ExamenPatronesDiseno
     {
         static void Main()
         {
+            string pathFile = @"C:\Users\jose.ek\Desktop\tarea.txt";
+            TextReaderService reader = new TextReaderService(pathFile);
             ConsoleKeyInfo keyInfo;
             do
             {

@@ -2,25 +2,25 @@
 
 namespace Domain
 {
-    public class Fedex : ICompany
+    public class Dhl : ICompany
     {
         public ITransport GetTransport(ITransportFactory transportFactory)
         {
-            if (transportFactory.GetType() == typeof(ShipFactory))
-                transportFactory.GetInstance();
+            if (transportFactory.GetType() == typeof(TrainFactory))
+                return null;
 
-            return null;
+            return transportFactory.GetInstance();
         }
 
 
         public double ProfitMargin()
         {
-            return 0.5;
+            return 0.4;
         }
 
         public string GetName()
         {
-            return "Fedex";
+            return "Dhl";
         }
     }
 }

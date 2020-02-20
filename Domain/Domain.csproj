@@ -41,11 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Companies\Estafeta.cs" />
+    <Compile Include="Companies\Dhl.cs" />
+    <Compile Include="CompanyFactory\EstafetaFactory.cs" />
+    <Compile Include="CompanyFactory\DhlFactory.cs" />
     <Compile Include="CompanyFactory\FedexFactory.cs" />
     <Compile Include="CompanyFactory\ICompanyFactory.cs" />
     <Compile Include="TransportFactory\ITransportFactory.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="Response.cs" />
+    <Compile Include="TransportFactory\AirplaneFactory.cs" />
+    <Compile Include="TransportFactory\TrainFactory.cs" />
+    <Compile Include="Transports\Airplane.cs" />
+    <Compile Include="Transports\Train.cs" />
     <Compile Include="Transports\Ship.cs" />
     <Compile Include="Companies\Fedex.cs" />
     <Compile Include="Companies\ICompany.cs" />

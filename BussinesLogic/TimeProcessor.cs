@@ -16,9 +16,9 @@ namespace BussinesLogic
 
         public void SetTime(double distance)
         {
-            double result = distance / _transport.Speed();
-            _estimatedTime = new TimeSpan(1, 1, 1);
-           
+            int hour = Convert.ToInt32(distance / _transport.Speed());
+            _estimatedTime = new TimeSpan(hour, 0, 0);
+
         }
 
         public DateTime GetDeliveryDate(DateTime init)
