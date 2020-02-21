@@ -13,6 +13,7 @@ namespace BussinesLogic
 
         public void BuildMessage(Response response)
         {
+            _builder.SetColorMessage();
             _builder.SetOrigin(response.Origin);
             _builder.SetDestination(response.Destination,response.DeliveredDate);
             _builder.SetCost(response.Cost);

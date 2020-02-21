@@ -21,9 +21,12 @@ namespace ExamenPatronesDiseno
             switch (option)
             {
                 case 1:
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.ForegroundColor = ConsoleColor.Green;
                     break;
                 case 2:
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    break;
+                case 3:
                     Console.ForegroundColor = ConsoleColor.Red;
                     break;
                 default:

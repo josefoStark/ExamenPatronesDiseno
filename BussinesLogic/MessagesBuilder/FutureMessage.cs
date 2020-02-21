@@ -1,5 +1,4 @@
 ﻿using System;
-using Domain;
 
 namespace BussinesLogic
 {
@@ -37,12 +36,13 @@ namespace BussinesLogic
             _infoMessage.Add($" (cualquier reclamación con {company})");
         }
 
-        public void SetTransport(string transport)
+        public void SetColorMessage()
         {
-            throw new NotImplementedException();
+            _infoMessage.ColorMessage = 2;
         }
 
-      
+       
+
 
     }
 }

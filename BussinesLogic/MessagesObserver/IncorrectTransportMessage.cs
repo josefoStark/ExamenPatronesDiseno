@@ -1,5 +1,4 @@
-﻿using System;
-using CommunicationService;
+﻿using CommunicationService;
 
 namespace BussinesLogic
 {
@@ -12,6 +11,7 @@ namespace BussinesLogic
         private string _transport;
         public void Notify()
         {
+            _userInterface.SetTextColor(2);
             _userInterface.Display($"{_company} no ofrece el servicio de transporte {_transport}, te recomendamos cotizar en otra empresa.");
         }
 

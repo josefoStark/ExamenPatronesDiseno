@@ -1,5 +1,5 @@
 ﻿using System;
-using CommunicationService;
+using System.IO;
 
 namespace ExamenPatronesDiseno
 {
@@ -7,20 +7,27 @@ namespace ExamenPatronesDiseno
     {
         static void Main()
         {
-            string pathFile = @"C:\Users\jose.ek\Desktop\tarea.txt";
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string pathFile = Path.Combine(currentDirectory, "Data", "Aplicacion.txt");
+
             TextReaderService reader = new TextReaderService(pathFile);
+            var request = reader.ListRequests();
             ConsoleKeyInfo keyInfo;
             do
             {
-                UserInterface userInterface= new UserInterface();
+                UserInterface userInterface = new UserInterface();
 
                 userInterface.SetTextColor(0);
 
-                new Client().Main(userInterface);
+                foreach (var item in request)
+                {
+                    new Client().Main(userInterface, item);
+                }
 
-                userInterface.SetTextColor(1);
+
+                userInterface.SetTextColor(0);
                 userInterface.Display("¿Terminar el programa? Y/N");
-                
+
                 keyInfo = Console.ReadKey();
 
             } while (keyInfo.Key != ConsoleKey.Y);

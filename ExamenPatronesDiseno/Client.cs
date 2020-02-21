@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices.WindowsRuntime;
 using BussinesLogic;
 using CommunicationService;
 using Domain;
@@ -16,18 +14,8 @@ namespace ExamenPatronesDiseno
             _publisher = new Publisher();
         }
 
-        public void Main(IUserInterface userInterface)
+        public void Main(IUserInterface userInterface, Request request)
         {
-            Request request = new Request
-            {
-                Company = "Fedex",
-                Destination = "Mérida",
-                Distance = 23,
-                OrderDate = DateTime.Today,
-                Origin = "Motul",
-                Transport = "Avión"
-            };
-
             ICompanyFactory companyFactory = SelectCompanyFactory(request.Company);
 
             if (companyFactory == null)
@@ -43,7 +31,7 @@ namespace ExamenPatronesDiseno
                 ITransportFactory transportFactory = SelectTransportFactory(request.Transport);
                 ITransport transport = company.GetTransport(transportFactory);
 
-                if (transport == null)
+                if (transport == null )
                 {
                     IncorrectTransportMessage errorTransport = new IncorrectTransportMessage(userInterface);
                     errorTransport.SetCompany(request.Company);
@@ -110,13 +98,13 @@ namespace ExamenPatronesDiseno
 
         private ICompanyFactory SelectCompanyFactory(string option)
         {
-            switch (option)
+            switch (option.ToUpperInvariant())
             {
-                case "Fedex":
+                case "FEDEX":
                     return new FedexFactory();
-                case "Dhl":
+                case "DHL":
                     return new DhlFactory();
-                case "Estafeta":
+                case "ESTAFETA":
                     return new EstafetaFactory();
                 default:
                     return null;
@@ -126,13 +114,13 @@ namespace ExamenPatronesDiseno
 
         private ITransportFactory SelectTransportFactory(string option)
         {
-            switch (option)
+            switch (option.ToUpperInvariant())
             {
-                case "Avion":
+                case "AVION":
                     return new AirplaneFactory();
-                case "Tren":
+                case "TREN":
                     return new TrainFactory();
-                case "Barco":
+                case "BARCO":
                     return new ShipFactory();
                 default:
                     return null;

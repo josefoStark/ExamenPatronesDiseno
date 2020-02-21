@@ -14,6 +14,7 @@ namespace BussinesLogic
 
         void SetCompany(string company);
 
-        void SetTransport(string transport);
+        void SetColorMessage();
+
     }
 }

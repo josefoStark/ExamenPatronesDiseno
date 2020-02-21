@@ -6,7 +6,7 @@ namespace BussinesLogic
     {
         public ICompany GetInstance()
         {
-            return new Fedex();
+            return new Dhl();
         }
     }
 }

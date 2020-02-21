@@ -10,6 +10,7 @@ namespace BussinesLogic
 
         public void Notify()
         {
+            _userInterface.SetTextColor(2);
             _userInterface.Display($"La Paquetería: {_message} no se encuentra registrada en nuestra red de distribución");
         }
 

@@ -4,12 +4,12 @@
     {
         public double Speed()
         {
-            return 10;
+            return 600;
         }
 
         public double Cost()
         {
-            return 600;
+            return 10;
         }
     }
 }

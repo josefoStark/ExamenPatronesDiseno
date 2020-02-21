@@ -6,6 +6,7 @@ namespace Domain
     {
         public ITransport GetTransport(ITransportFactory transportFactory)
         {
+            if (transportFactory == null) return null;
             if (transportFactory.GetType() == typeof(ShipFactory))
                 transportFactory.GetInstance();
 
